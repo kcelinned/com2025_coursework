@@ -1,0 +1,16 @@
+%p
+  %b=t('.title')
+  = @task.title
+%p
+  %b=t('.description')
+  = @task.description
+%p
+  %b=t('.date')
+  = @task.date.strftime('%a, %d %b %Y %H:%M')
+%p
+  %b=t('.completed')
+  = @task.completed
+
+= link_to t('.edit'), edit_task_path(@task)
+\|
+= link_to t('.done'), tasks_path

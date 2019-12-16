@@ -1,0 +1,41 @@
+
+#showevent
+  %p
+    %b=t('.title')
+    = @event.title
+  %p
+    %b=t('.date')
+    = @event.date
+  %p
+    %b=t('.start')
+    = @event.start.strftime('%H:%M')
+  %p
+    %b=t('.end')
+    = @event.end.strftime('%H:%M')
+  %p
+    %b=t('.location')
+    = @event.location
+  %p
+    %b=t('.description')
+    = @event.description
+
+
+  / Table for event's tasks /
+  %h3=t('.task')
+  %table
+    %tbody
+      -@event.event_tasks.each do |event_task|
+        %tr{id:"event_task_#{event_task.id}"}
+        %td= event_task.title
+        %td= link_to t('edit'), edit_event_task_path(event_task)
+        %td= link_to t('destroy'), event_task, :method=>:delete, :data=>{:confirm=>'Are you sure?'}, :remote => true
+
+
+
+  =link_to t('.task'), new_event_task_path(event_id: @event), :class => "button btn btn-default"
+
+  %p
+
+  = link_to t('edit'), edit_event_path(@event)
+  \|
+  = link_to t('back'), events_path

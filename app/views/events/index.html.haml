@@ -1,0 +1,32 @@
+%h1=t('.header')
+
+/ Events table does not have description column - use show to view description as description may be too long /
+
+%table
+  %thead
+    %tr
+      %th=t('.title')
+      %th=t('.date')
+      %th=t('.start')
+      %th=t('.end')
+      %th=t('.location')
+      %th
+      %th
+      %th
+
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td= event.title
+        %td= event.date.strftime('%a, %d %b %Y')
+        %td= event.start.strftime('%H:%M')
+        %td= event.end.strftime('%H:%M')
+        %td= event.location
+        %td= link_to t('open'), event
+        %td= link_to t('edit'), edit_event_path(event)
+        %td= link_to t('destroy'), event, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+.button
+  = link_to t('.event'), new_event_path, :class => "button btn btn-default"

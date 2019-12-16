@@ -1,0 +1,25 @@
+/ Form partial that can be used in several views /
+
+= form_for @event_task do |f|
+  - if @event_task.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@event_task.errors.count, "error")} prohibited this event_task from being saved:"
+      %ul
+        - @event_task.errors.full_messages.each do |message|
+          %li= message
+
+
+  .field
+    = f.label :event
+    = @event_task.event.title
+    = f.hidden_field :event_id, value: @event_task.event.id
+  .field
+    = f.label :title
+    = f.text_area :title, :id => "txt"
+  .field
+    = f.label :completed
+    = f.check_box :completed
+  .actions
+    = f.submit t('save')
+  #reset
+    %button{name: "button", type: "button"} Clear

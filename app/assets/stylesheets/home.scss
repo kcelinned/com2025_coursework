@@ -1,0 +1,43 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+form{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin:10px
+}
+
+#contact{
+  form label, form input{
+    display: block;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+h1{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+#title{
+  font-size: 10vw;
+}
+
+
+.welcome{
+  text-align: center;
+  font-size: 5vw;
+}
+
+#contact_p{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

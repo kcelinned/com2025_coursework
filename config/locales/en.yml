@@ -1,0 +1,142 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  app_title: BujOnline
+  app_description: A place to stay organised
+
+  edit: Edit
+  done: Done
+  save: Save
+  open: "Show"
+  back: Back
+  destroy: Delete
+
+  home:
+    home:
+      title: BujOnline
+      welcome: Keep your life organised
+
+    contact:
+      title: Contact Us
+      contact_us: Complete the following form to get in touch with us
+
+      name: "Name"
+      enter_name: Enter your Name
+      email: "Email"
+      enter_email: Enter your email address
+      telephone: "Telephone"
+      enter_telephone: Enter your telephone number
+      message: "Message"
+      enter_message: What do you want to say?
+      submit: Contact Us
+
+    request_contact:
+      no_email: You must supply an email address
+      email_sent: Thank you. We will be in touch shortly.
+
+  contact_mailer:
+    contact_email:
+      message: Could you get in touch with me please?
+
+  event_tasks:
+    index:
+      new: New Event Task
+      header: Listing Event Tasks
+      event: Event
+      title: Title
+      completed: Completed
+
+    edit:
+      header: Editing Event Task
+
+    new:
+      header: New Event Task
+
+    show:
+      event: "Event:"
+      title: "Title:"
+      completed: "Completed:"
+
+
+  events:
+    index:
+      header: Events
+      event: New Event
+      task: Add Task
+      title: Title
+      date: Date
+      start: Start
+      end: End
+      location: Location
+      description: Description
+
+    new:
+      header: New Event
+
+    edit:
+      header: Editing Event
+
+  show:
+      title: "Title:"
+      completed: "Completed:"
+      date: "Date"
+      start: "Start"
+      end: "End"
+      location: "Location"
+      description: "Description"
+      task: Tasks
+
+  tasks:
+    edit:
+      header: Editing Task
+
+    index:
+        header: To Do List
+        title: "Title:"
+        completed: "Completed:"
+        date: "Date"
+        new: New Task
+
+    new:
+      header: New Task
+
+    show:
+        title: "Title:"
+        completed: "Completed:"
+        date: "Date"
+        description: "Description:"
+
+
+  shared:
+    _header:
+      home: Home
+      contact: Contact

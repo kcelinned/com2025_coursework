@@ -1,0 +1,14 @@
+#title
+  %h1=t('.title')
+.welcome
+  %p=t('.welcome')
+
+
+/ Shows calendar if user is signed in /
+-if user_signed_in?
+  = month_calendar datevents: @events do |date, datevents|
+    = date.strftime('%d')
+    / Shows user's events on calendar with link to event /
+    - datevents.each do |datevent|
+      %div
+        = link_to datevent.name, datevent

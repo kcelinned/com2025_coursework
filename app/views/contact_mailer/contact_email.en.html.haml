@@ -1,0 +1,19 @@
+
+
+/ Template for the how the email will look /
+
+%p= "Dear #{t('app_title')},"
+%p=t('.message')
+
+%dl
+  %dt Name:
+  %dd= @name
+  %dt Email:
+  %dd= @email
+  %dt Telephone:
+  %dd= @telephone
+
+%p= @message
+
+%p Thanks,
+%p= @name

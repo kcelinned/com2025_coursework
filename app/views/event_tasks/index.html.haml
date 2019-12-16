@@ -1,0 +1,23 @@
+%h1=t('.header')
+
+%table
+  %thead
+    %tr
+      %th=t('.event')
+      %th=t('.title')
+      %th=t('.completed')
+      %th
+      %th
+      %th
+
+  %tbody
+    - @event_tasks.each do |event_task|
+      %tr
+        %td= event_task.event.title
+        %td= event_task.title
+        %td= event_task.completed
+        %td= link_to t('open'), event_task
+        %td= link_to t('edit'), edit_event_task_path(event_task)
+        %td= link_to t('destroy'), event_task, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br

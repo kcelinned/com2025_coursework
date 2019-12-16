@@ -1,0 +1,31 @@
+%header
+/ Bootstrap navigation bar /
+%nav.navbar.navbar-default{:role => "navigation"}
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "/"} Home
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          %a{:href => "/contact"} Contact Us
+      / Events and Tasks only shown on navigation bar once user has signed in /
+      %ul.nav.navbar-nav.navbar-right
+        -if user_signed_in?
+          %li
+            = link_to t('Events'), events_url
+          %li
+            = link_to t('To Do List'), tasks_url
+          %li
+            = link_to t('profile'), edit_user_registration_path
+          %li
+            = link_to t('logout'), destroy_user_session_path, method: 'delete'
+        -else
+          %li
+            = link_to t('login'), new_user_session_path
+          %li
+            = link_to t('sign_up'), new_user_registration_path

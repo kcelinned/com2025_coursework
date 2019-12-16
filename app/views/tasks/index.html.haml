@@ -1,0 +1,29 @@
+%h1=t('.header')
+
+/ Task table does not have description column - use show to view description as description may be too long  /
+
+
+%table
+  %thead
+    %tr
+      %th=t('.title')
+      %th=t('.date')
+      %th=t('.completed')
+      %th
+      %th
+      %th
+
+  %tbody
+    - @tasks.each do |task|
+      %tr
+        %td= task.title
+        %td= task.date.strftime('%a, %d %b %Y %H:%M')
+        %td= task.completed
+        %td= link_to t('open'), task
+        %td= link_to t('edit'), edit_task_path(task)
+        %td= link_to t('destroy'), task, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+.button
+  = link_to t('.new'), new_task_path, :class => "button btn btn-default"

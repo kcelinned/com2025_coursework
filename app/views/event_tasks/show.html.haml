@@ -1,0 +1,16 @@
+%p
+  %b=t('.event')
+  = @event_task.event.title
+%p
+  %b=t('.title')
+  = @event_task.title
+%p
+  %b=t('.completed')
+  = @event_task.completed
+
+
+= link_to t('edit'), edit_event_task_path(@event_task)
+\|
+
+/ Links user back to the event instead of the event_task index /
+= link_to t('done'), @event_task.event

@@ -1,0 +1,8 @@
+%h1=t('.header')
+
+/ Uses the form partial so user is able to edit information /
+= render 'form'
+
+= link_to t('open'), @event
+\|
+= link_to t('back'), events_path

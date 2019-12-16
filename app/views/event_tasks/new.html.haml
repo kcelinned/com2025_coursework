@@ -1,0 +1,7 @@
+%h1=t('.header')
+
+/ Uses form partial to allow user to input new information /
+= render 'form'
+
+/ links user back to the event /
+= link_to t('back'), @event_task.event
